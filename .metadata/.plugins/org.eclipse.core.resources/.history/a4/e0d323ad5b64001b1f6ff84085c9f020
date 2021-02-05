@@ -1,0 +1,51 @@
+package Parameterization;
+
+import org.testng.annotations.Test;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
+
+public class ParameterFromXML 
+{
+	
+	WebDriver driver;
+
+	@BeforeMethod
+	public void before()
+	{
+		//System.setProperty("webdriver.chrome.driver", "/home/anu/Selenium Drivers/chromedriver");
+		//ChromeOptions opt=new ChromeOptions();
+		driver=new FirefoxDriver();
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		driver.manage().timeouts().pageLoadTimeout(45, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		
+	}
+
+	@Test
+	@Parameters({"url","username"})
+	public void login(String url,String username)
+	{
+		//System.out.println(url);
+		driver.get(url);
+		driver.findElement(By.name("email")).sendKeys(username);
+
+	}
+
+	@AfterMethod
+	public void after()
+	{
+		//driver.close();
+		driver.quit();
+	}
+
+
+}

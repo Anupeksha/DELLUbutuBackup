@@ -1,0 +1,16 @@
+---------xpaths-------------
+browser=Mozilla
+url=https://ui.cogmento.com/
+
+
+------------------------------------------
+username_name=email
+password_name=password
+
+-----------------------------------------------
+ebay_url=https://reg.ebay.in/reg/PartialReg
+firstName_id=firstname
+lastName_id=lastname
+email_id=email
+password_id=PASSWORD
+

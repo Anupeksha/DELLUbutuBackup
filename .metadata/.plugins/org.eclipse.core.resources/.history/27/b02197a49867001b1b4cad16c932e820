@@ -1,0 +1,13 @@
+package CustomLocators;
+
+import TestBase.TestBaseClass;
+
+public class CustomXpath extends TestBaseClass 
+{
+	@Test
+	public void Google()
+	{
+		
+	}
+
+}

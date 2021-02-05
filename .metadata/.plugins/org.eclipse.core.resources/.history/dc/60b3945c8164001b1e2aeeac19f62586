@@ -1,0 +1,7 @@
+---------xpaths-------------
+browser=Mozilla
+url=https://ui.cogmento.com/
+
+username_name=email
+password_name=password
+

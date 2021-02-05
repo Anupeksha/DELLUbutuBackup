@@ -1,0 +1,12 @@
+package Annotations;
+
+import org.testng.annotations.BeforeClass;
+
+public class GoogleTest
+{
+    @BeforeClass
+    public void before()
+    {
+        System.out.println("Before the Class");
+    }
+}

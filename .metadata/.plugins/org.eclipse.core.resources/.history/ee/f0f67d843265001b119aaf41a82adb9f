@@ -1,0 +1,39 @@
+package Utils;
+
+import java.util.ArrayList;
+
+public class TestUtil 
+{
+	static XLSReader xls;
+	
+	public static void main(String[] args)
+	{
+		ArrayList<Object[]> myData = getDataFromExcel("/home/anu/Workspace IntelliJ/TestNG/src/test/java/TestDataxls/TestData.xlsx", "HalfEbay_Registration");
+		for (Object[] objects : myData) {
+			for (Object[] o : myData) {
+				System.out.println(o);
+			}
+		}
+	}
+	
+	
+	public static ArrayList<Object[]> getDataFromExcel(String path,String SheetName)
+	{
+		//xls=new XLSReader("/home/anu/Workspace IntelliJ/TestNG/src/test/java/TestDataxls/TestData.xlsx");
+		xls=new XLSReader(path);
+		//String SheetName="HalfEbay_Registration";
+		ArrayList<Object[]> data=new ArrayList<Object[]>();
+		
+		for(int row=2;row<=xls.getRowCount(SheetName);row++)
+		{
+			for(int col=1;col<=xls.getColumnCount(SheetName);col++)
+			{
+				data.get(row-2)[col-1]=xls.getCellData(SheetName, row, col);
+			}
+		}
+		
+		return data;
+	}
+	
+
+}

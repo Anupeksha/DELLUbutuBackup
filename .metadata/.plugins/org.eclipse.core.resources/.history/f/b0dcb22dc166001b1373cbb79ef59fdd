@@ -1,0 +1,25 @@
+package Popups;
+
+import java.util.Iterator;
+import java.util.Set;
+
+import org.testng.annotations.Test;
+
+import TestBase.TestBaseClass;
+
+public class Popup  extends TestBaseClass
+{
+	@Test
+	public void qtpSelenium() throws InterruptedException
+	{
+		driver.navigate().to("http://www.qtpselenium.com/test/unpredicatable.php");
+		Set<String> windows = driver.getWindowHandles();
+		Thread.sleep(3000);
+		Iterator<String> itr = windows.iterator();
+		while(itr.hasNext())
+		{
+			driver.switchTo().frame(itr.next());
+		}
+	}
+
+}

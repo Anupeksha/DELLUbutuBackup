@@ -1,0 +1,72 @@
+package DataDrivenApproach;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import TestBase.TestBaseClass;
+import Utils.TestUtil;
+
+public class AmityUniversity extends TestBaseClass
+{
+	@Test(dataProvider = "getData",enabled = false)
+	public void register(String Name,String email,String contact,String state, String city) throws InterruptedException
+	{
+		driver.navigate().to(prop.getProperty("Form_url"));
+		System.out.print(Name+"\t"+email+"\t"+contact+"\t"+state+"\t"+city+"\t");
+		driver.findElement(By.xpath(prop.getProperty("name_id"))).sendKeys(Name);
+		driver.findElement(By.xpath(prop.getProperty("emailAdd_id"))).sendKeys(email);
+		driver.findElement(By.xpath(prop.getProperty("contact_id"))).sendKeys(contact);
+		driver.findElement(By.xpath(prop.getProperty("state_id"))).sendKeys(state);
+		driver.findElement(By.xpath(prop.getProperty("city_id"))).sendKeys(city);
+		//driver.findElement(By.xpath(prop.getProperty("program_id"))).sendKeys(program);
+		Thread.sleep(5000);
+	}
+
+	@Test()
+	public void register2() throws InterruptedException
+	{
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+
+		driver.navigate().to(prop.getProperty("Form_url"));
+		//System.out.print(Name+"\t"+email+"\t"+contact+"\t"+state+"\t"+city+"\t");
+		driver.findElement(By.xpath(prop.getProperty("name_id"))).sendKeys("Anupeksha");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(prop.getProperty("emailAdd_id"))).sendKeys("xyz@xya.com");
+		driver.findElement(By.xpath(prop.getProperty("contact_id"))).sendKeys("9989397490");
+		//driver.findElement(By.xpath(prop.getProperty("state_id"))).sendKeys("Kar",Keys.ARROW_DOWN,Keys.ENTER);
+		//WebElement State = driver.findElement(By.xpath(prop.getProperty("state_id")));
+		js.executeScript("document.getElementById('ddlstate').setAttribute('value', 'Karnataka')");
+		Thread.sleep(2000);
+		js.executeScript("window.scrollBy(0,3)");		
+		//		String xpath="//ul[@id='ui-id-1']/li/div[contains(text(),'Karnataka')]";
+		//		String javascript="document.evaluate('//ul[@id='ui-id-1']/li/div[contains(text(),'Karnataka')]',document,null,XPathResult.FIRST_ORDERED_NODE_TYPE,null).singleNodeValue;)"; 
+		//		WebDriverWait wait=new WebDriverWait(driver, 20);
+		//		wait.until(ExpectedConditions.visibilityOf(e));
+		//		WebElement element = (WebElement) js.executeScript(javascript); 
+		//		element.click();
+		//		js.executeScript("arguments[0].click();", e);
+
+
+		Actions act=new Actions(driver);
+		//		act.moveByOffset(0, 15).build().perform();
+		act.click().build().perform();
+		Thread.sleep(3000);
+		//driver.findElement(By.xpath(prop.getProperty("city_id"))).sendKeys(city);
+		//driver.findElement(By.xpath(prop.getProperty("program_id"))).sendKeys(program);
+	}
+
+	@DataProvider
+	public Iterator<Object[]> getData()
+	{
+		ArrayList<Object[]> myData = TestUtil.getDataFromExcel("/home/anu/Workspace IntelliJ/TestNG/src/test/java/TestDataxls/TestData.xlsx", "Amity");
+		return myData.iterator();
+
+	}
+
+}

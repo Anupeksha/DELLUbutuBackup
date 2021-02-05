@@ -1,0 +1,17 @@
+package JavaScriptExecutor;
+
+import org.testng.annotations.Test;
+
+import TestBase.TestBaseClass;
+
+public class JavaScript_Scroll extends TestBaseClass
+{
+	@Test
+	public void crm() throws InterruptedException
+	{
+		driver.get("https://ui.freecrm.com");
+		js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+		Thread.sleep(4000);
+	}
+
+}

@@ -1,0 +1,25 @@
+package collections;
+import java.util.LinkedList;
+
+public class Linkedlist 
+{
+	public static void main(String[] args) 
+	{
+		LinkedList<String> linkl =new LinkedList<String>();
+		linkl.add("Red");
+		linkl.add("Green");
+		linkl.add("Purple");
+		
+		System.out.println(linkl);
+		
+		linkl.addFirst("Yellow");
+		System.out.println(linkl);
+		
+		linkl.addLast("Yellow");
+		System.out.println(linkl);
+		
+		linkl.set(2, "Black");
+		System.out.println(linkl);
+	}
+
+}

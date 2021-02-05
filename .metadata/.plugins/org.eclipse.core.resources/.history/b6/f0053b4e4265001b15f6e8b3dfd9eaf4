@@ -1,0 +1,38 @@
+package DataDrivenApproach;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+import org.openqa.selenium.By;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import TestBase.TestBaseClass;
+import Utils.TestUtil;
+import Utils.XLSReader;
+
+public class AmityUniversity extends TestBaseClass
+{
+	@Test(dataProvider = "getData")
+	public void register(String Name,String email,String contact,String state, String city,String program) throws InterruptedException
+	{
+		driver.navigate().to(prop.getProperty("Form_url"));
+		System.out.print(Name+"\t"+email+"\t"+contact+"\t"+state+"\t"+city+"\t"+program);
+		driver.findElement(By.xpath(prop.getProperty("name_id"))).sendKeys(Name);
+		driver.findElement(By.xpath(prop.getProperty("emailAdd_id"))).sendKeys(email);
+		driver.findElement(By.xpath(prop.getProperty("contact_id"))).sendKeys(contact);
+		driver.findElement(By.xpath(prop.getProperty("state_id"))).sendKeys(state);
+		driver.findElement(By.xpath(prop.getProperty("city_id"))).sendKeys(city);
+		driver.findElement(By.xpath(prop.getProperty("program_id"))).sendKeys(program);
+		Thread.sleep(5000);
+	}
+	
+	@DataProvider
+	public Iterator<Object[]> getData()
+	{
+		ArrayList<Object[]> myData = TestUtil.getDataFromExcel("/home/anu/Workspace IntelliJ/TestNG/src/test/java/TestDataxls/TestData.xlsx", "Amity");
+		return myData.iterator();
+		
+	}
+
+}

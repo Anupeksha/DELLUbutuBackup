@@ -1,0 +1,24 @@
+package Frames;
+
+import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
+import TestBase.TestBaseClass;
+
+public class iFrame extends TestBaseClass
+{
+	@Test
+	public void paytm() throws InterruptedException
+	{
+		driver.get("http://paytm.com");
+		driver.findElement(By.xpath("//div[@class='_3ac-']")).click();
+
+		driver.switchTo().frame(driver.findElement(By.xpath("//div[@class='content']")));
+		Thread.sleep(4000);
+		
+		String s= driver.findElement(By.xpath("//div[@class='content']")).getText();
+		System.out.println(s);
+		
+	}
+
+}

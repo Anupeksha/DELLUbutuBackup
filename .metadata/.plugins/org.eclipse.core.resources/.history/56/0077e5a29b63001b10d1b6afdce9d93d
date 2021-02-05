@@ -1,0 +1,60 @@
+package Annotations;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class GoogleTest
+{
+	WebDriver driver;
+	@BeforeMethod
+	public void before()
+	{
+//		WebDriverManager.chromedriver().browserVersion("86.0.4240.198").setup();
+//		WebDriverManager.chromedriver().setup();
+//		driver = new FirefoxDriver();
+		//System.setProperty("webdriver.chrome.driver", "/home/anu/Selenium Drivers/chromedriver");
+		ChromeOptions opt=new ChromeOptions();
+		opt.setBinary("/home/anu/Selenium Drivers/chromedriver");
+		driver=new ChromeDriver(opt);
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		driver.manage().timeouts().pageLoadTimeout(45, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	}
+
+	@Test
+	public void googleTitleTest() throws InterruptedException
+	{
+		driver.navigate().to("https://www.google.com/");
+		Thread.sleep(5000);
+		String title=driver.getTitle();
+//		Thread.sleep(3000);
+		System.out.println("Title of the Page is : "+title);
+	}
+	
+	@Test
+	public void googleLogoTest()
+	{
+		boolean logoPresent=driver.findElement(By.id("hplogo")).isDisplayed();
+		if(logoPresent)
+		{
+			System.out.println("Logo is Present");
+		}
+	}
+
+	@AfterTest
+	public void after()
+	{
+		driver.quit();
+	}
+}

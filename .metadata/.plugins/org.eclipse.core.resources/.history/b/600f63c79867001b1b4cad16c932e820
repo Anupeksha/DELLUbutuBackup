@@ -1,0 +1,27 @@
+package CustomLocators;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+import TestBase.TestBaseClass;
+
+public class CustomXpath extends TestBaseClass 
+{
+	@Test
+	public void Google() throws InterruptedException
+	{
+		driver.get("https://www.google.com/");
+		driver.findElement(By.cssSelector("input.gLFyf.gsfi")).sendKeys("restaurants near me");
+		Thread.sleep(3000);
+		List<WebElement> results = driver.findElements(By.xpath("ul.erkvQe>li>div>div:nth-child(2)>div>span"));
+
+		for (WebElement webElement : results) 
+		{
+			System.out.println(webElement.getText());
+		}
+	}
+
+}

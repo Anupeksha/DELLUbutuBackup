@@ -1,0 +1,35 @@
+package Frames;
+
+import java.util.Iterator;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+import TestBase.TestBaseClass;
+
+public class iFrame extends TestBaseClass
+{
+	@Test
+	public void paytm() throws InterruptedException
+	{
+		driver.get("http://paytm.com");
+		driver.findElement(By.xpath("//div[@class='_3ac-']")).click();
+//		driver.switchTo().frame(0);
+//		Thread.sleep(3000);
+		
+		List<WebElement> frames = driver.findElements(By.tagName("iframe"));
+		Iterator<WebElement> itr = frames.iterator();
+		while(itr.hasNext())
+		{
+			WebElement x = itr.next();
+			System.out.println("Frame : "+x.getAttribute("name"));
+		}
+			
+//		String s= driver.findElement(By.xpath("//div[@class='content']")).getText();
+//		System.out.println(s);
+		
+	}
+
+}

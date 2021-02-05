@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.testng.eclipse.launchconfig">
+<stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="org.eclipse.m2e.launchconfig.classpathProvider"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.testng.remote.RemoteTestNG"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="TestNG"/>
+<stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
+<mapAttribute key="org.testng.eclipse.ALL_CLASS_METHODS">
+<mapEntry key="Alerts.JavaAlert" value="rediff"/>
+<mapEntry key="Annotations.GoogleTest" value="browserSearchResults;searchTest;gmailLinkTest;before;googleTitleTest;after;googleLogoTest"/>
+<mapEntry key="Annotations.TestCase1" value="Afterclass;testCase2;beforetest;beforeclass;beforeSuite;Aftermethod;Aftertest;testCase1;afterSuite;beforemethod"/>
+<mapEntry key="Assertions.HardAssertions" value="after;before;googleTitleTest"/>
+<mapEntry key="Assertions.Rectangle" value="Rectangle"/>
+<mapEntry key="Assertions.SoftAssterions" value="softAss"/>
+<mapEntry key="DataDrivenApproach.AmityUniversity" value="getData;register;register2"/>
+<mapEntry key="DataDrivenApproach.DataProviders" value="getData;login"/>
+<mapEntry key="DataDrivenApproach.HalfEbay" value="getData;register"/>
+<mapEntry key="DataDrivenApproach.HalfEbay2" value="register;getData"/>
+<mapEntry key="ExplicitWait.ExplicitWaiting" value="spice"/>
+<mapEntry key="Frames.iFrame" value="paytm;toolsqa"/>
+<mapEntry key="Groups.RegularExpression" value="test1smoke;test2;test4;test3smoke"/>
+<mapEntry key="HeadLessBrowserTesting.HTMLUnitDRriverConcept" value="freecrmWithoutHTML"/>
+<mapEntry key="HeadLessBrowserTesting.HeadlessBrowser" value="FreeCRM"/>
+<mapEntry key="JavaScriptExecutor.JavaScriptcode" value="freecrm"/>
+<mapEntry key="Listeners.TestCases" value="test4;test2;test3;test1"/>
+<mapEntry key="Listeners.TestListener" value="onTestFailure;onTestFailedWithTimeout;onTestStart;onTestFinish;onTestSuccess;onTestSkipped"/>
+<mapEntry key="Locators.Linktext" value="amazon"/>
+<mapEntry key="MouseActions.ActionsClass" value="spicejet"/>
+<mapEntry key="Parameterization.ParameterFromXLS" value="readingXLS"/>
+<mapEntry key="Parameterization.ParameterFromXML" value="after;before;login"/>
+<mapEntry key="Popups.BrowserPopup" value="qtpSelenium"/>
+<mapEntry key="Screenshots.ScreenshotFull" value="spice"/>
+<mapEntry key="Screenshots.ScreenshotOfElement" value="spice"/>
+<mapEntry key="TestBase.TestBaseClass" value="after;before"/>
+<mapEntry key="TestNGFeatures.ExceptionTimeOut" value="infiniteLoopTest;expectedExceptionTest"/>
+<mapEntry key="TestNGFeatures.FeaturesOfTestNG" value="testcase1;testcase3;testcase2;testcase4"/>
+<mapEntry key="TestNGFeatures.InvocationCount" value="sum"/>
+<mapEntry key="Upload_Download.UploadFiles" value="upload"/>
+<mapEntry key="Utils.TestUtil" value="getDataFromExcel;main"/>
+<mapEntry key="Utils.XLSReader" value="getCellData;getCellRowNum;setCellData;isSheetExist;XLSReader;getRowCount;getCellData;getColumnCount;addColumn"/>
+</mapAttribute>
+<listAttribute key="org.testng.eclipse.CLASS_TEST_LIST">
+<listEntry value="TestNGFeatures.ExceptionTimeOut"/>
+<listEntry value="Utils.XLSReader"/>
+<listEntry value="MouseActions.ActionsClass"/>
+<listEntry value="Assertions.SoftAssterions"/>
+<listEntry value="Parameterization.ParameterFromXML"/>
+<listEntry value="HeadLessBrowserTesting.HTMLUnitDRriverConcept"/>
+<listEntry value="DataDrivenApproach.AmityUniversity"/>
+<listEntry value="JavaScriptExecutor.JavaScriptcode"/>
+<listEntry value="DataDrivenApproach.DataProviders"/>
+<listEntry value="TestBase.TestBaseClass"/>
+<listEntry value="Assertions.Rectangle"/>
+<listEntry value="Annotations.TestCase1"/>
+<listEntry value="Listeners.TestCases"/>
+<listEntry value="Listeners.TestListener"/>
+<listEntry value="TestNGFeatures.FeaturesOfTestNG"/>
+<listEntry value="ExplicitWait.ExplicitWaiting"/>
+<listEntry value="Annotations.GoogleTest"/>
+<listEntry value="Alerts.JavaAlert"/>
+<listEntry value="Assertions.HardAssertions"/>
+<listEntry value="HeadLessBrowserTesting.HeadlessBrowser"/>
+<listEntry value="Parameterization.ParameterFromXLS"/>
+<listEntry value="TestNGFeatures.InvocationCount"/>
+<listEntry value="Screenshots.ScreenshotFull"/>
+<listEntry value="Frames.iFrame"/>
+<listEntry value="DataDrivenApproach.HalfEbay"/>
+<listEntry value="Utils.TestUtil"/>
+<listEntry value="Locators.Linktext"/>
+<listEntry value="Groups.RegularExpression"/>
+<listEntry value="Popups.BrowserPopup"/>
+<listEntry value="DataDrivenApproach.HalfEbay2"/>
+<listEntry value="Screenshots.ScreenshotOfElement"/>
+<listEntry value="Upload_Download.UploadFiles"/>
+</listAttribute>
+<listAttribute key="org.testng.eclipse.METHOD_TEST_LIST"/>
+<listAttribute key="org.testng.eclipse.PACKAGE_TEST_LIST"/>
+<stringAttribute key="org.testng.eclipse.PRE_DEFINED_LISTENERS" value=""/>
+<intAttribute key="org.testng.eclipse.TYPE" value="1"/>
+</launchConfiguration>

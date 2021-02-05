@@ -1,0 +1,27 @@
+package HeadLessBrowserTesting;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+import org.testng.annotations.Test;
+
+import net.bytebuddy.implementation.bytecode.Duplication;
+
+public class HeadlessBrowser 
+{
+	@Test
+	public void FreeCRM()
+	{
+		//HTMLUnitDriver is not available in Selenium 3
+		//To use this concept, download HTMLUnitDRiver jars
+		WebDriver driver = new HtmlUnitDriver();
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+		
+		driver.get("https://ui.freecrm.com");
+	}
+
+}

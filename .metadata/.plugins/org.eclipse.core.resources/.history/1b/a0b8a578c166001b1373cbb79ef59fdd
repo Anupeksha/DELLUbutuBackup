@@ -1,0 +1,26 @@
+package Popups;
+
+import java.util.Iterator;
+import java.util.Set;
+
+import org.testng.annotations.Test;
+
+import TestBase.TestBaseClass;
+
+public class Popup  extends TestBaseClass
+{
+	@Test
+	public void qtpSelenium() throws InterruptedException
+	{
+		driver.navigate().to("https://www.popuptest.com/desktop/home");
+		
+		Thread.sleep(3000);
+		Set<String> windows = driver.getWindowHandles();
+		Iterator<String> itr = windows.iterator();
+		while(itr.hasNext())
+		{
+			System.out.println(itr.next());
+		}
+	}
+
+}

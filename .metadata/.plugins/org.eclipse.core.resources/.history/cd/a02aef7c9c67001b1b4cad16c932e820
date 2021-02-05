@@ -1,0 +1,17 @@
+package JavaScriptExecutor;
+
+import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
+import TestBase.TestBaseClass;
+
+public class JavaScript_Datapicker extends TestBaseClass
+{
+	@Test
+	public void sakra()
+	{
+		driver.navigate().to("https://www.sakraworldhospital.com/request-appointment.php");
+		driver.findElement(By.linkText("Dr. Srikanth Narayanaswamy")).click();
+	}
+
+}

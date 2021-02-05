@@ -1,0 +1,8 @@
+package JavaScriptExecutor;
+
+public class Snippet {
+	public static void main(String[] args) {
+		driver.get("https://ui.freecrm.com");
+	}
+}
+

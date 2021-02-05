@@ -1,0 +1,15 @@
+package DataDrivenApproach;
+
+import org.testng.annotations.Test;
+
+import TestBase.TestBaseClass;
+
+public class HalfEbay extends TestBaseClass
+{
+	@Test
+	public void register()
+	{
+		driver.navigate().to(prop.getProperty("ebay_url"));
+	}
+
+}

@@ -1,0 +1,11 @@
+package org.openqa.selenium;
+
+public class ExplicitWaiting extends Test
+{
+	@Test
+	public void spice()
+	{
+		driver.get("https://www.spicejet.com/");
+	}
+}
+

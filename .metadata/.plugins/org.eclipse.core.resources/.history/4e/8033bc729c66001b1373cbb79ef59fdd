@@ -1,0 +1,8 @@
+package ExplicitWait;
+
+public class Snippet {
+	public static void main(String[] args) {
+		driver.get("https://www.spicejet.com/");
+	}
+}
+

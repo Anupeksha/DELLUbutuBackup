@@ -1,0 +1,15 @@
+package ExplicitWait;
+
+import org.testng.annotations.Test;
+
+import TestBase.TestBaseClass;
+
+public class ExplicitWaiting extends TestBaseClass
+{
+	@Test
+	public void spice()
+	{
+		driver.get("https://www.spicejet.com/");
+	}
+}
+
